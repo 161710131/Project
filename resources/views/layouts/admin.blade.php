@@ -1,122 +1,142 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>ZioneCam</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset ('plugins/font-awesome/css/font-awesome.min.css')}}">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="{{asset ('plugins/iCheck/flat/blue.css')}}">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="{{asset ('plugins/morris/morris.css')}}">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="{{asset ('plugins/jvectormap/jquery-jvectormap-1.2.2.css')}}">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="{{asset ('plugins/datepicker/datepicker3.css')}}">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="{{asset ('plugins/daterangepicker/daterangepicker-bs3.css')}}">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="{{asset ('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-</head>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-<body class="hold-transition sidebar-mini">
-<div class="wrapper">
+    <title>ZioneCam </title>
 
-  <!-- Navbar -->
-  
-      @include('partial.navbar')
-  
-  <!-- /.navbar -->
+    <!-- Bootstrap -->
+    <link href="{{asset('back/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{{asset('back/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{{asset('back/vendors/nprogress/nprogress.css')}}" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="{{asset('back/vendors/iCheck/skins/flat/green.css')}}" rel="stylesheet">
+	
+    <!-- bootstrap-progressbar -->
+    <link href="{{asset('back/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="{{asset('back/vendors/jqvmap/dist/jqvmap.min.css')}}" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="{{asset('back/vendors/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
 
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-      @include('partial.sidebar')
-  </aside>
+    <!-- Custom Theme Style -->
+    <link href="{{asset('back/build/css/custom.min.css')}}" rel="stylesheet">
+  </head>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <!-- <h1 class="m-0 text-dark">Dashboard</h1> -->
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>ZioneCam</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="{{asset('back/production/images/img.jpg')}}" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>John Doe</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                @include('partial.sidebar')
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          @include('partial.navbar')  
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+           
+           @yield('content')
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+            @include('partial.footer')
+        </footer>
+        <!-- /footer content -->
+      </div>
     </div>
-    <!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-      @yield('content')
-    </section>
-    <!-- /.content -->
-  </div>
-  
-  <!-- /.content-wrapper -->
-  
+    <!-- jQuery -->
+    <script src="{{asset('back/vendors/jquery/dist/jquery.min.js')}}"></script>
+    <!-- Bootstrap -->
+    <script src="{{asset('back/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <!-- FastClick -->
+    <script src="{{asset('back/vendors/fastclick/lib/fastclick.js')}}"></script>
+    <!-- NProgress -->
+    <script src="{{asset('back/vendors/nprogress/nprogress.js')}}"></script>
+    <!-- Chart.js -->
+    <script src="{{asset('back/vendors/Chart.js/dist/Chart.min.js')}}"></script>
+    <!-- gauge.js -->
+    <script src="{{asset('back/vendors/gauge.js/dist/gauge.min.js')}}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{{asset('back/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js')}}"></script>
+    <!-- iCheck -->
+    <script src="{{asset('back/vendors/iCheck/icheck.min.js')}}"></script>
+    <!-- Skycons -->
+    <script src="{{asset('back/vendors/skycons/skycons.js')}}"></script>
+    <!-- Flot -->
+    <script src="{{asset('back/vendors/Flot/jquery.flot.js')}}"></script>
+    <script src="{{asset('back/vendors/Flot/jquery.flot.pie.js')}}"></script>
+    <script src="{{asset('back/vendors/Flot/jquery.flot.time.js')}}"></script>
+    <script src="{{asset('back/vendors/Flot/jquery.flot.stack.js')}}"></script>
+    <script src="{{asset('back/vendors/Flot/jquery.flot.resize.js')}}"></script>
+    <!-- Flot plugins -->
+    <script src="{{asset('back/vendors/flot.orderbars/js/jquery.flot.orderBars.js')}}"></script>
+    <script src="{{asset('back/vendors/flot-spline/js/jquery.flot.spline.min.js')}}"></script>
+    <script src="{{asset('back/vendors/flot.curvedlines/curvedLines.js')}}"></script>
+    <!-- DateJS -->
+    <script src="{{asset('back/vendors/DateJS/build/date.js')}}"></script>
+    <!-- JQVMap -->
+    <script src="{{asset('back/vendors/jqvmap/dist/jquery.vmap.js')}}"></script>
+    <script src="{{asset('back/vendors/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>
+    <script src="{{asset('back/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js')}}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{{asset('back/vendors/moment/min/moment.min.js')}}"></script>
+    <script src="{{asset('back/vendors/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
 
-  
-  <footer class="main-footer">
-      @include('partial.footer')
-  </footer>
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery -->
-<script src="{{asset ('plugins/jquery/jquery.min.js')}}"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script src="{{asset ('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="{{asset ('plugins/morris/morris.min.js')}}"></script>
-<!-- Sparkline -->
-<script src="{{asset ('plugins/sparkline/jquery.sparkline.min.js')}}"></script>
-<!-- jvectormap -->
-<script src="{{asset ('plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
-<script src="{{asset ('plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
-<!-- jQuery Knob Chart -->
-<script src="{{asset ('plugins/knob/jquery.knob.js')}}"></script>
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-<script src="{{asset ('plugins/daterangepicker/daterangepicker.js')}}"></script>
-<!-- datepicker -->
-<script src="{{asset ('plugins/datepicker/bootstrap-datepicker.js')}}"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="{{asset ('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
-<!-- Slimscroll -->
-<script src="{{asset ('plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
-<!-- FastClick -->
-<script src="{{asset ('plugins/fastclick/fastclick.js')}}"></script>
-<!-- AdminLTE App -->
-<script src="{{asset('dist/js/adminlte.js')}}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{asset('dist/js/demo.js')}}"></script>
-</body>
+    <!-- Custom Theme Scripts -->
+    <script src="{{asset('back/build/js/custom.min.js')}}"></script>
+	
+  </body>
 </html>
+
+

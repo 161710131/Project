@@ -1,37 +1,14 @@
 @extends('layouts.admin')
-@push('styles')
-<link rel="stylesheet" href="{{asset('dalam/vendors/bower_components/lightgallery/dist/css/lightgallery.min.css')}}">
-<style type="text/css">
-  .table thead tr th{
-  vertical-align: middle;
-  text-align: center;
-  }
-  .table tbody tr td{
-  vertical-align: middle;
-  text-align: center;
-  }
-  #data th, #data td {
-  font-size: 11px;
-  }
-  .text-danger 
-  {
-  text-transform:capitalize;
-  }
-  .fc-time{
-  display: none;
-  }
-</style>
-<style type="text/css"></style>
-@endpush
+
 @section('content')
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <div class="row">
   <div class="col-12">
     <div class="card">
-      <h2 class="card-header">
-        Tambah Peminjaman
+      <h2 class="card-body">
+        Rental Barang
         <div class="float-right">
-          <a class="btn btn-xs btn-danger" href="{{route('peminjaman.index')}}"><i class="fa fa-close-circle"></i> Batal</a>
+          <a class="btn btn-round btn-danger" href="{{route('peminjaman.index')}}"><i class="fa fa-close-circle"></i> Batal</a>
         </div>
       </h2>
       <div class="card-body">
@@ -60,14 +37,14 @@
                   <th>Barang Rentalan</th>
                   <th>Jumlah Rental</th>
                   <th>Batas Waktu Rental</th>
-                  <th><button type="button" name="add" class="btn btn-primary btn-xs add" onclick="addrow()"><i class="fa fa-plus-square"></i></button></th>
+                  <th><button type="button" name="add" class="btn btn-primary btn-round add" onclick="addrow()"><i class="fa fa-plus-square"></i></button></th>
                 </tr>
               </table>
             </center>
             <br>
             <!--             <input type="submit" name="submit" class="btn btn-info" value="Simpan"> -->
             <div align="right">
-              <button type="submit" name="submit" class="btn btn-success btn-xs" value="Pinjam"> Rental</button>
+              <button type="submit" name="submit" class="btn btn-success btn-round" value="Pinjam"> Rental</button>
             </div>
           </div>
 
@@ -86,7 +63,7 @@
       html +='<td><select name="barang_id[]" class="form-control sl12">@foreach($barangs as $data)<option value="{{$data->id}}">{{$data->nama}}</option>@endforeach</select></td>';
       html +='<td><input type="number" name="jumlah_pinjam[]" class="form-control"/></td>';
       html +='<td><input type="date" name="tanggal_batas[]" class="form-control date"/></td>';
-      html +='<td><button type="button" class="btn btn-xs" style="background-color : darkviolet" onclick="remove('+ no +')"><i class="fa fa-minus-square"></i></button></td></tr>';
+      html +='<td><button type="button" class="btn btn-round" style="background-color : darkviolet" onclick="remove('+ no +')"><i class="fa fa-minus-square"></i></button></td></tr>';
       $('#last').after(html);
       $('.sl2').select2();
       $('.date').flatpickr({

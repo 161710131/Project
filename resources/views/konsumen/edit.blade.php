@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="container">
 		<div class="col-md-12">
-			<div class="panel panel-primary">
+			<div class="panel">
 			  <div class="panel-heading">Edit Data  
 			  	<div class="panel-title pull-right"><a href="{{ url()->previous() }}">Kembali</a>
 			  	</div>
@@ -35,7 +35,7 @@
           </div>
 			  		
 			  		<div class="form-group">
-			  			<button type="submit" class="btn btn-primary">Simpan</button>
+			  			<button type="submit" class="btn btn-round btn-primary">Simpan</button>
 			  		</div>
 			  	</form>
 			  </div>

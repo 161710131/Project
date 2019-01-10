@@ -2,16 +2,15 @@
 @section('content')
 <div class="row">
 	<div class="container">
-		<div class="col-md-12">
-			<div class="panel panel-primary">
-			<h2 class="card-header">Data Barang
-					<div class="float-right"><a class="btn btn-xs btn-primary" href="{{ route('barang.create') }}">Tambah</a>
-			  	</div>
-			</h2>
-			  </div>
-			  <div class="panel-body">
-			  	<div class="table-responsive">
-				  <table class="table">
+	<div class="col-12">
+   <div class="card">
+      <div class="card-body">
+         <h2 class="card-title">Data Barang</h2>
+         <hr>
+			<a class="btn btn-round btn-primary" href="{{ route('barang.create') }}">Tambah</a>
+			  
+			  <div class="table-responsive mt-10">
+      <table id="datatable" class="table table-striped table-bordered">
 				  	<thead>
 			  		<tr>
                       <th>No</th>
@@ -39,14 +38,14 @@
                         <td><img src="{{ asset('/backend/images/gambarbarang/'.$data->gambar) }}" style="max-height:125px;max-width:125px;margin-top:7px"></td>
 				    	<td>{{ $data->Kategori->nama }}</td>
 						<td>
-							<a class="btn btn-warning" href="{{ route('barang.edit',$data->id) }}">Edit</a>
-						</td>
-						<td>
+							
+						
 							<form method="post" action="{{ route('barang.destroy',$data->id) }}">
 								<input name="_token" type="hidden" value="{{ csrf_token() }}">
 								<input type="hidden" name="_method" value="DELETE">
 
-								<button type="submit" class="btn btn-danger">Delete</button>
+								<button type="submit" class="btn btn-round btn-danger">Delete</button>
+								<a class="btn btn-round btn-warning" href="{{ route('barang.edit',$data->id) }}">Edit</a>
 							</form>
 						</td>
 				      </tr>

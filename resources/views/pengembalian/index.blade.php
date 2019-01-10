@@ -8,19 +8,21 @@
         
       </h2>
       <div class="card-body">
-        <table id="myTable" class="table table-striped table-bordered">
+      <div class="table-responsive mt-10">
+      <table id="datatable" class="table table-striped table-bordered">
           <thead class="thead-default" >
             <tr>
               <th>No</th>
-              <th>Nama Peminjam</th>
-              <th>Barang Pinjaman</th>
-              <th>Jumlah Pinjam</th>
-              <th>Tanggal Peminjaman</th>
-              <th>Tanggal Batas Peminjaman</th>
-              <th>Tanggal Pengembalian</th>
+              <th>Nama Perental</th>
+              <th>Barang Rental</th>
+              <th>Jumlah Rental</th>
+              <th>Tanggal Rental</th>
+              <th>Tanggal Batas Rental</th>
+              <th>Tanggal Kembali</th>
               <th>Harga</th>
               <th>Denda</th>
               <th>Keterangan</th>
+              <th>aksi</th>
             </tr>
           </thead>
           <tbody>
@@ -38,6 +40,7 @@
               <td>Rp.{{ number_format($data->Barang->harga) }},-</td>
               <td>Rp.{{ number_format($data->denda) }},-</td>
               <td>{{ $data->keterangan }}</td>
+              <td><a class="btn btn-round btn-info" href="#"><i class="fa fa-mood"></i> Cetak</a></td>
             </tr>
             @endforeach 
           </tbody>

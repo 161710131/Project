@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="container">
 		<div class="col-md-12">
-			<div class="panel panel-primary">
+			<div class="panel">
 			  <div class="panel-heading">Tambah Data  
 			  	<div class="panel-title pull-right"><a href="{{ url()->previous() }}">Kembali</a>
 			  	</div>
